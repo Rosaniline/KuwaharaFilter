@@ -1,0 +1,213 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2685CF8B15CBA4C80013410F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2685CF8A15CBA4C80013410F /* main.cpp */; };
+		2685CF8D15CBA4C80013410F /* Kuwahara_Filter.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2685CF8C15CBA4C80013410F /* Kuwahara_Filter.1 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2685CF8415CBA4C80013410F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				2685CF8D15CBA4C80013410F /* Kuwahara_Filter.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2685CF8615CBA4C80013410F /* Kuwahara Filter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Kuwahara Filter"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2685CF8A15CBA4C80013410F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		2685CF8C15CBA4C80013410F /* Kuwahara_Filter.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Kuwahara_Filter.1; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2685CF8315CBA4C80013410F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2685CF7B15CBA4C80013410F = {
+			isa = PBXGroup;
+			children = (
+				2685CF8915CBA4C80013410F /* Kuwahara Filter */,
+				2685CF8715CBA4C80013410F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2685CF8715CBA4C80013410F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2685CF8615CBA4C80013410F /* Kuwahara Filter */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2685CF8915CBA4C80013410F /* Kuwahara Filter */ = {
+			isa = PBXGroup;
+			children = (
+				2685CF8A15CBA4C80013410F /* main.cpp */,
+				2685CF8C15CBA4C80013410F /* Kuwahara_Filter.1 */,
+			);
+			path = "Kuwahara Filter";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2685CF8515CBA4C80013410F /* Kuwahara Filter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2685CF9015CBA4C80013410F /* Build configuration list for PBXNativeTarget "Kuwahara Filter" */;
+			buildPhases = (
+				2685CF8215CBA4C80013410F /* Sources */,
+				2685CF8315CBA4C80013410F /* Frameworks */,
+				2685CF8415CBA4C80013410F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Kuwahara Filter";
+			productName = "Kuwahara Filter";
+			productReference = 2685CF8615CBA4C80013410F /* Kuwahara Filter */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2685CF7D15CBA4C80013410F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Rosani Lin";
+			};
+			buildConfigurationList = 2685CF8015CBA4C80013410F /* Build configuration list for PBXProject "Kuwahara Filter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2685CF7B15CBA4C80013410F;
+			productRefGroup = 2685CF8715CBA4C80013410F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2685CF8515CBA4C80013410F /* Kuwahara Filter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2685CF8215CBA4C80013410F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2685CF8B15CBA4C80013410F /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2685CF8E15CBA4C80013410F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		2685CF8F15CBA4C80013410F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		2685CF9115CBA4C80013410F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2685CF9215CBA4C80013410F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2685CF8015CBA4C80013410F /* Build configuration list for PBXProject "Kuwahara Filter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2685CF8E15CBA4C80013410F /* Debug */,
+				2685CF8F15CBA4C80013410F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2685CF9015CBA4C80013410F /* Build configuration list for PBXNativeTarget "Kuwahara Filter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2685CF9115CBA4C80013410F /* Debug */,
+				2685CF9215CBA4C80013410F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2685CF7D15CBA4C80013410F /* Project object */;
+}
