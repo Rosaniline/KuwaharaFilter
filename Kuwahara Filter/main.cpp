@@ -16,7 +16,7 @@ int main(int argc, const char * argv[])
 //
 //    imwrite("/Users/xup6qup3/Dropbox/code/Rosani.Dev/Kuwahara Filter/Kuwahara Filter/7.JPG", temp);
     
-    k_filter->video_filter("/Users/xup6qup3/Dropbox/yeon_T-ARA N4 - 泬埶暮 (Dance ver.)_CNSUB.mkv");
+    k_filter->videoFilter("/Users/xup6qup3/Dropbox/yeon_T-ARA N4 - 泬埶暮 (Dance ver.)_CNSUB.mkv", "/Users/xup6qup3/Dropbox/code/Rosani.Dev/Kuwahara Filter/Kuwahara Filter/4.avi");
     
     
 //    Mat temp = imread("/Users/xup6qup3/Dropbox/Photos/anne-hathaway-movie-catwoman-the-dark-knight-rises-christopher-nolan-800x1280.jpeg");

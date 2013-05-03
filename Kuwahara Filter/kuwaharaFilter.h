@@ -18,11 +18,6 @@
 #include <sys/time.h>
 
 
-
-
-
-
-
 using namespace cv;
 using namespace std;
 
@@ -30,13 +25,13 @@ class kuwaharaFilter {
 public:
     
     kuwaharaFilter();
-    //    kuwaharaFilter();
-    
-    Mat image_filter(const string& fileName, int iterations);
-    void video_filter(const string& filePath);
     ~kuwaharaFilter();
     
+    Mat imageFilter(const Mat& input_img, int iterations);
+    Mat imageFileFilter (const string& img_path, int iterations);
     
+    void videoFilter(const string& src_path, const string& dst_path);
+
     
 private:
     
@@ -47,7 +42,6 @@ private:
     static const double SIGMA_S         = 3.0;
     static const double SHARPNESS_Q     = 8.0;
     static const int    SECTOR_N        = 8;
-
     
     
     void tensorComputation (const Mat& src_img, Mat& eigenVec_ori_cos, Mat& eigenVec_ori_sin, Mat& amo_anisotropy);

@@ -22,12 +22,14 @@ kuwaharaFilter::kuwaharaFilter() {
 
 
 
-Mat kuwaharaFilter::image_filter(const string& fileName, int iterations) {
+Mat kuwaharaFilter::imageFilter(const cv::Mat &input_img, int iterations) {
+
+    Mat src_img = input_img.clone();
     
-    Mat src_img = imread(fileName.c_str());
-    cvtColor(src_img, src_img, CV_BGR2YCrCb);
-    src_img.convertTo(src_img, CV_64FC3);
-    src_img /= 255.0;
+    if ( src_img.type() != CV_64FC3 ) {
+        src_img.convertTo(src_img, CV_64FC3);
+        src_img /= 255.0;
+    }
     
     
     
@@ -38,7 +40,7 @@ Mat kuwaharaFilter::image_filter(const string& fileName, int iterations) {
     
     cout<<"image resolution : "<<src_img.rows<<"x"<<src_img.cols<<endl;
     
-    Mat input_img = src_img.clone();
+    Mat src_clone = src_img.clone();
     
     for (int i = 0; i < iterations; i ++) {
                 
@@ -47,14 +49,14 @@ Mat kuwaharaFilter::image_filter(const string& fileName, int iterations) {
         gettimeofday(&tim, NULL);
         double t1 = tim.tv_sec + (tim.tv_usec/1000000.0);
         
-        filtered_img = anisotropic_kuwahara(input_img);
+        filtered_img = anisotropic_kuwahara(src_clone);
         
         gettimeofday(&tim, NULL);
         double t2 = tim.tv_sec + (tim.tv_usec/1000000.0);
         
         cout<<"anisotropic_kuwahara computation : "<<t2 - t1<<" secs.\n";
         
-        input_img = filtered_img.clone();
+        src_clone = filtered_img.clone();
         
 //        showMat(filtered_img, "filtered image", 1);
 
@@ -62,54 +64,50 @@ Mat kuwaharaFilter::image_filter(const string& fileName, int iterations) {
     
 //    showMat(filtered_img, "filtered image", 0);
     
-    
-    
-    filtered_img *= 255;
-    filtered_img.convertTo(filtered_img, CV_8UC3);
-    cvtColor(filtered_img, filtered_img, CV_YCrCb2BGR);
+
     
     return filtered_img;
 
 }
 
 
-void kuwaharaFilter::video_filter(const string &filePath) {
+Mat kuwaharaFilter::imageFileFilter(const string &img_path, int iterations) {
     
-    VideoCapture video = VideoCapture(filePath.c_str());
+    Mat src_img = imread(img_path.c_str());
+    
+    src_img.convertTo(src_img, CV_64FC3);
+    src_img /= 255.0;
+    
+    
+    return imageFilter(src_img, iterations);
+}
+
+
+void kuwaharaFilter::videoFilter(const string &src_path, const string &dst_path) {
+    
+    VideoCapture v_reader = VideoCapture(src_path.c_str());
     
     double reszie_ratio = 1.0;
     
-    if ( video.isOpened() ) {
+    if ( v_reader.isOpened() ) {
         
         Mat temp;
-        video >> temp;
+        v_reader >> temp;
         
         resizeMat(temp, reszie_ratio);
         
-        VideoWriter v_writer = VideoWriter("/Users/xup6qup3/Dropbox/code/Rosani.Dev/Kuwahara Filter/Kuwahara Filter/2.avi", CV_FOURCC('P','I','M','1'), 30, temp.size());
+        VideoWriter v_writer = VideoWriter(dst_path.c_str(), CV_FOURCC('P','I','M','1'), 30, temp.size());
         
-        while (video.grab()) {
+        while (v_reader.grab()) {
 
             resizeMat(temp, reszie_ratio);
             
-            temp.convertTo(temp, CV_64FC3);
-            temp /= 255;
+            temp = imageFilter(temp, 3);
             
-            Mat temp2 = temp.clone();
-            
-            for (int j = 0; j < 1; j ++) {
-                
-                temp = anisotropic_kuwahara(temp2);
-                
-                temp2 = temp.clone();
-                
-            }
-            
-            temp *= 255;
             temp.convertTo(temp, CV_8UC3);
             
             v_writer.write(temp);
-            video >> temp;
+            v_reader >> temp;
 
         }
         
@@ -117,7 +115,7 @@ void kuwaharaFilter::video_filter(const string &filePath) {
     
     }
     
-    video.release();
+    v_reader.release();
     
     
 }
